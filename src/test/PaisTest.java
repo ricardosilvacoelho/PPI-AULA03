@@ -17,14 +17,14 @@ public class PaisTest {
 		System.out.println("setup");
 		pais = new Pais();
 		pais.setId(id);
-		pais.setNome("Filipinas");
-		pais.setPopulacao(Long.valueOf("107208000"));
-		pais.setArea(Double.valueOf(300000));
+		pais.setNome("Brasil");
+		pais.setPopulacao(Long.valueOf("1234"));
+		pais.setArea(Double.valueOf(9876));
 		copia = new Pais();
 		copia.setId(id);
-		copia.setNome("Egito");
-		copia.setPopulacao(Long.valueOf("98313500"));
-		copia.setArea(Double.valueOf(1010000));
+		copia.setNome("Japao");
+		copia.setPopulacao(Long.valueOf("123456"));
+		copia.setArea(Double.valueOf(98765));
 		paisService = new PaisService();
 		System.out.println(pais);
 		System.out.println(copia);
@@ -46,8 +46,8 @@ public class PaisTest {
 		Pais fixture = new Pais();
 		fixture.setId(1);
 		fixture.setNome("Turquia");
-		fixture.setPopulacao(Long.valueOf("82003882"));
-		fixture.setArea(Double.valueOf(783562));
+		fixture.setPopulacao(Long.valueOf("36542"));
+		fixture.setArea(Double.valueOf(23456));
 		PaisService novoService = new PaisService();
 		Pais novo = novoService.carregar(1);
 		assertEquals("testa inclusao", novo, fixture);
@@ -56,8 +56,8 @@ public class PaisTest {
 	@Test
 	public void testAtualizar() {
 		System.out.println("atualizar");
-		pais.setPopulacao(Long.valueOf("126320000"));
-		copia.setArea(Double.valueOf(98313500));
+		pais.setPopulacao(Long.valueOf("34567"));
+		copia.setArea(Double.valueOf(23445));
 		paisService.atualizar(pais);
 		pais = paisService.carregar(pais.getId());
 		assertEquals("testa atualizacao", pais, copia);
